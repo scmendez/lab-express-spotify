@@ -1,0 +1,16 @@
+{{#each artists}}
+
+{{#if this.images.length}}
+<h1>{{ this.name }}</h1>
+<img src="{{ this.images.0.url }}" alt="image of {{ this.name }}">
+{{/if}}
+
+<a href="/albums/{{ this.id }}">View Albums</a>
+
+{{/each}}
+
+{{!-- whenever we are inside of a loop, always use the this keyword --}}
+
+{{!-- hbs is a big fan of curly brackets, but not square ones
+the way to access indexes in arrays (within hbs) is to use dot notation --}}
+{{!-- instead of images[0], it's images.0 --}}
